@@ -47,8 +47,6 @@ class TodoListAdapter(val todoList:ArrayList<Todo>, val adapterOnClick : (Todo) 
 //        holder.view.checkTask.setOnCheckedChangeListener { compoundButton, b ->
 //            adapterOnClick(todoList[position])
 //
-//
-//
 //        }
 //
 //        var imgEdit = holder.view.findViewById<ImageView>(R.id.imgEdit)
