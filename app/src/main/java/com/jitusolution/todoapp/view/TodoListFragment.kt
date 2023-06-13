@@ -51,6 +51,7 @@ class TodoListFragment : Fragment() {
     fun observeViewModel() {
         viewModel.todoLD.observe(viewLifecycleOwner, Observer {
             todoListAdapter.updateTodoList(it)
+
             var txtEmpty = view?.findViewById<TextView>(R.id.txtEmpty)
             if(it.isEmpty()) {
                 txtEmpty?.visibility = View.VISIBLE

@@ -44,8 +44,9 @@ class TodoListAdapter(val todoList:ArrayList<Todo>, val adapterOnClick : (Todo) 
 //
 //
 //
-//        checktask.setOnCheckedChangeListener { compoundButton, b ->
+//        holder.view.checkTask.setOnCheckedChangeListener { compoundButton, b ->
 //            adapterOnClick(todoList[position])
+//
 //
 //
 //        }
@@ -60,21 +61,24 @@ class TodoListAdapter(val todoList:ArrayList<Todo>, val adapterOnClick : (Todo) 
 //            Navigation.findNavController(it).navigate(action)
 //        }
 //
-//        checkTask.setOnCheckedChangeListener { compoundButton, isChecked ->
-//            if(isChecked == true) {
+        holder.view.checkTask.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if(isChecked == true) {
 //                adapterOnClick(todoList[position])
-//            }
-//        }
+                todoList[position].is_done=1
+            }
+        }
 
     }
 
     override fun getItemCount(): Int
     {
         return todoList.size
+
     }
 
     fun updateTodoList(newTodoList: List<Todo>) {
         todoList.clear()
+
         todoList.addAll(newTodoList)
         notifyDataSetChanged()
     }
