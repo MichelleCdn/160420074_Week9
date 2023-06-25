@@ -17,8 +17,18 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
             "ALTER TABLE todo " + "ADD COLUMN priority INTEGER DEFAULT 3 not null")
-        database.execSQL("INSERT INTO todo(title, notes, priority) " + "VALUES('Study hard', 'Play harder',3)")
+//        database.execSQL("INSERT INTO todo(title, notes, priority) " + "VALUES('Study hard', 'Play harder',3)"
+
     }
 }
 
+val MIGRATION_2_3 = object:Migration(2, 3){
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "ALTER TABLE todo ADD COLUMN is_done INTEGER DEFAULT 0 not null")
+//is_done menggunakan integer dikarenakan room sqlite tidak memiliki boolean namun hanya diketahui
+// jika angka 1 maka true dan 0 yaitu false pada sqlite commands sehingga digunakan integer
+
+    }
+}
 

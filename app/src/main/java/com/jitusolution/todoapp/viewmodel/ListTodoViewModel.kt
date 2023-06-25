@@ -43,6 +43,7 @@ class ListTodoViewModel(application: Application)
 //                getApplication(),
 //                TodoDatabase::class.java, "newtododb").build()
 //            db.todoDao().deleteTodo(todo)
+            db.todoDao().doneTodo(todo.uuid)
 
             todoLD.postValue(db.todoDao().selectAllTodo())
         }

@@ -39,6 +39,8 @@ class EditTodoFragment : Fragment() {
         val uuid = EditTodoFragmentArgs.fromBundle(requireArguments()).uuid
         viewModel.fetch(uuid)
 
+        observeViewModel()
+
         btnAdd.setOnClickListener {
             val txtTitle = view.findViewById<TextView>(R.id.txtTitle)
             val txtNotes = view.findViewById<TextView>(R.id.txtNotes)
@@ -52,37 +54,32 @@ class EditTodoFragment : Fragment() {
         }
 
 
-//        observeViewModel()
-        viewModel.todoLD.observe(viewLifecycleOwner, Observer {
-            val txtTitle = view.findViewById<TextView>(R.id.txtTitle)
-            val txtNotes = view.findViewById<TextView>(R.id.txtNotes)
-            txtTitle.setText(it.title)
-            txtNotes.setText(it.notes)
-
-            val radioLow = view.findViewById<RadioButton>(R.id.radioLow)
-            val radioMedium = view.findViewById<RadioButton>(R.id.radioMedium)
-            val radioHigh = view.findViewById<RadioButton>(R.id.radioHigh)
-
-
-            when (it.priority) {
-                1 -> radioLow.isChecked = true
-                2 -> radioMedium.isChecked = true
-                else -> radioHigh.isChecked = true
-
-            }
-        })
 
     }
 
 
-//    fun observeViewModel() {
-//        viewModel.todoLD.observe(viewLifecycleOwner, Observer {
-//            var txtTitle = view.findViewById<TextView>(R.id.txtTitle)
-//            var txtNotes = view.findViewById<TextView>(R.id.txtNotes)
-//            txtTitle.setText(it.title)
-//            txtNotes.setText(it.notes)
-//        })
-//    }
+    fun observeViewModel() {
+        viewModel.todoLD.observe(viewLifecycleOwner, Observer {
+            val txtTitle = view?.findViewById<TextView>(R.id.txtTitle)
+            val txtNotes = view?.findViewById<TextView>(R.id.txtNotes)
+            txtTitle?.setText(it.title)
+            txtNotes?.setText(it.notes)
+
+            val radioLow = view?.findViewById<RadioButton>(R.id.radioLow)
+            val radioMedium = view?.findViewById<RadioButton>(R.id.radioMedium)
+            val radioHigh = view?.findViewById<RadioButton>(R.id.radioHigh)
+
+
+            when (it.priority) {
+                1 -> radioLow?.isChecked = true
+                2 -> radioMedium?.isChecked = true
+                else -> radioHigh?.isChecked = true
+
+            }
+        })
+    }
 
 
 }
+
+

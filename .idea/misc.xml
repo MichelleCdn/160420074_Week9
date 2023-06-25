@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ekton/AndroidStudioProjects/160420074_Week9/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ekton/AndroidStudioProjects/160420074_Week9/app/src/main/res/layout/fragment_create_todo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ekton/AndroidStudioProjects/160420074_Week9/app/src/main/res/layout/fragment_todo_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ekton/AndroidStudioProjects/160420074_Week9/app/src/main/res/layout/todo_item_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ekton/AndroidStudioProjects/TodoApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ekton/AndroidStudioProjects/TodoApp/app/src/main/res/layout/fragment_create_todo.xml" value="0.33" />
         <entry key="..\:/Users/ekton/AndroidStudioProjects/TodoApp/app/src/main/res/layout/fragment_edit_todo.xml" value="0.20416666666666666" />
